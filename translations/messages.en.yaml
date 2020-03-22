@@ -1,0 +1,19 @@
+produit :
+  titre : 'Product list'
+  nom: 'Name'
+  quantitie: 'Quantity'
+  prix: 'Price'
+  image: 'Picture'
+  action: 'Action'
+
+panier:
+  titre : 'Shopping Cart'
+  nom : 'Name'
+  quantitie: 'Quantity'
+  montant : 'Amount'
+
+Nom : 'Name'
+Quantite : 'Quantity'
+Prix : 'Price'
+Photo : 'Photo'
+Sauvegarder : 'Save'

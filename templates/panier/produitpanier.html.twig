@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ta mere!{% endblock %}
+
+{% block body %}
+<table class="table">
+    <thead>
+    <tr>
+        <th>{{ 'panier.nom'|trans }}</th>
+        <th>{{ 'panier.quantitie'|trans }}</th>
+        <th>{{ 'panier.montant'|trans }}</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ panier.produit }}</td>
+            <td>{{ panier.quantite }}</td>
+            <td>{{ panier.produit.prix}}€</td>
+        </tr>
+
+    </tbody>
+</table>
+    {{ form(form_ajoutpanier) }}
+
+{% endblock %}

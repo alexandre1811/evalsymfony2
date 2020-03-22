@@ -1,0 +1,21 @@
+produit :
+  titre : 'Liste de produit'
+  nom : 'Nom'
+  quantitie : 'Quantité'
+  prix : 'Prix'
+  image : 'Image'
+  action : 'Action'
+
+panier:
+  titre : 'Contenu du panier'
+  nom : 'Nom'
+  quantitie: 'Quantité'
+  montant : 'Montant'
+
+Nom : 'Nom'
+Quantite : 'Quantité'
+Prix : 'Prix'
+Photo : 'Photo'
+Sauvegarder : 'Sauvegarder'
+Etat : 'Etat'
+Produit :

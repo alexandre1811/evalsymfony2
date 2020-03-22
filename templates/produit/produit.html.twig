@@ -23,7 +23,7 @@
                 {% endif %}
                 <td>{{ produit.quantite }}</td>
                 <td>{{ produit.prix}}€</td>
-                <td><a class="btn btn-danger" href="{{ path('supprproduit', {'id': produit.id}) }}">Supprimer</a>
+                <td><a class="btn btn-danger" href="{{ path('supprproduit', {'id': produit.id}) }}">{{'Suppr' | trans}}</a>
                 </td>
             </tr>
         </tbody>

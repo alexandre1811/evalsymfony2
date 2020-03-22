@@ -99,27 +99,7 @@ class ProduitController extends AbstractController
 
     }
 
-    /**
-     * @Route("/ajout/{id}", name="paniermodif")
-     */
-    public function ajoutpanier(Panier $panier=null, Request $request){
-        if ($panier !=null){
-            $form= $this->createForm(ProduitModifType::class, $panier);
-            $form->handleRequest($request);
-            if ($form->isSubmitted() && $form->isValid()){
-                $pdo = $this->getDoctrine()->getManager();
-                $pdo->persist($panier);
-                $pdo->flush();
-                $this->addFlash("success", "Produit Modifié");
 
-            }
 
-            return $this->render('panier/produitpanier.html.twig', [
-                'form_ajoutpanier'=>$form -> createView(),
-            ]);
-        }
-
-        return $this->redirectToRoute('panier');
-    }
 
 }

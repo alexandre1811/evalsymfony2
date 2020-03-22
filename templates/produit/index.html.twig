@@ -26,8 +26,8 @@
                         {% endif %}
                         <td>{{ produit.quantite }}</td>
                         <td>{{ produit.prix}}€</td>
-                        <td><a class="btn btn-primary" href="{{ path('modifproduit',{'id':produit.id}) }}">Modifier</a>
-                        <a class="btn btn-primary" href="{{ path('paniermodif',{'id':produit.id} )}}">Ajouter au panier</a>
+                        <td><a class="btn btn-primary" href="{{ path('modifproduit',{'id':produit.id}) }}">{{'modif' | trans}}</a>
+                        <a class="btn btn-primary" href="{{ path('paniermodif',{'id':produit.id} )}}">{{'Add' | trans}}</a>
                         </td>
                     </tr>
                 {%  endfor %}

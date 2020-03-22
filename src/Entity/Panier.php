@@ -27,7 +27,7 @@ class Panier
     private $date_ajout;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $etat;
 

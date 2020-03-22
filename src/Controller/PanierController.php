@@ -34,11 +34,30 @@ class PanierController extends AbstractController
 
         $paniers = $pdo->getRepository(Panier::class)->findAll();
         return $this->render('panier/index.html.twig', [
-            'paniers' => $paniers,
+            'paniers' => $paniers,'form_ajoutpanier'=>$form -> createView(),
         ]);
     }
 
+    /**
+     * @Route("/ajout/{id}", name="paniermodif")
+     */
+    public function ajoutpanier(Panier $panier, Request $request){
+        $form= $this->createForm(ProduitModifType::class, $panier);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $pdo = $this->getDoctrine()->getManager();
+            $pdo->persist($panier);
+            $pdo->flush();
+            $this->addFlash("success", "Panier Modifié");
 
+        }
+
+        return $this->render('panier/produitpanier.html.twig', [
+            'form_ajoutpanier'=>$form -> createView(),
+        ]);
+
+
+    }
 
 
     /**

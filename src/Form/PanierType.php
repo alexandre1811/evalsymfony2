@@ -13,6 +13,7 @@ class PanierType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('produit')
             ->add('quantite')
             ->add('sauvegarder', SubmitType::class)
         ;

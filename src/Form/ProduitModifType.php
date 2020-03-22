@@ -14,6 +14,7 @@ class ProduitModifType extends AbstractType
     {
         $builder
             ->add('quantite')
+            ->add('produit')
             ->add('sauvegarder',SubmitType::class)
         ;
     }

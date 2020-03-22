@@ -20,15 +20,29 @@
                     <td>{{ panier.produit }}</td>
                     <td>{{ panier.quantite }}</td>
                     <td>{{ panier.produit.prix}}€</td>
-                    <td><a class="btn btn-danger" href="{{ path('supprpanier',{'id':panier.id}) }}">Supprimer</a>
+                    <td><a class="btn btn-danger" href="{{ path('supprpanier',{'id':panier.id}) }}">{{'Suppr' | trans}}</a>
                     </td>
                 </tr>
             {%  endfor %}
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td>
+                        {% set somme = 0 %}
+                        {% for panier in paniers %}
+                            {% set somme = panier.produit.prix * panier.quantite %}
+                        {% endfor %}
+                        {{somme}}€
+                    </td>
+                </tr>
             </tbody>
         </table>
     {% else %}
         <p>Il n'y a aucun produit</p>
     {% endif %}
 
+    {{ form(form_ajoutpanier) }}
 
 {% endblock %}
